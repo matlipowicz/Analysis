@@ -1,0 +1,116 @@
+@use "../abstracts/" as *;
+
+.chart-grid {
+    display: flex;
+    overflow-x: auto;
+
+    background-color: transparent;
+
+    // z-index: 1000;
+
+    @include rwd(t-sml-l) {
+        display: grid;
+        grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+        overflow: hidden;
+
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        transform: translateX(-50%) translateY(-50%);
+
+        padding: 2rem;
+        margin-left: 8rem;
+
+        width: min(50%, 100rem);
+        // height: 50%;
+
+        background-color: var(--color-white);
+        border-radius: 2rem;
+        box-shadow: 0 4px 8px rgba($color-black, 0.4);
+    }
+
+    &__box {
+        flex-shrink: 0;
+
+        padding: 2rem;
+        margin-top: 6rem;
+        margin-bottom: 6rem;
+
+        background-color: var(--color-white);
+        border-radius: 2rem;
+
+        @include rwd(t-sml-l) {
+            &--10 {
+                justify-content: center;
+
+                position: absolute;
+                top: 50%;
+                left: 68%;
+                transform: translate(-50%, -50%);
+
+                width: min(20%, 300rem);
+                height: 25%;
+
+                border-radius: 2rem;
+
+                background-color: var(--color-white);
+                box-shadow: 0 2px 6px rgba($color-black, 0.6);
+            }
+        }
+
+        &:not(:last-child) {
+            margin-right: 6rem;
+
+            @include rwd(t-sml-l) {
+                margin-right: 0;
+            }
+        }
+
+        &:first-child {
+            @include rwd(m-med-p) {
+                margin-left: 6rem;
+            }
+
+            @include rwd(t-sml-l) {
+                margin-left: 0;
+            }
+        }
+
+        @include rwd(t-sml-l) {
+            flex-shrink: 1;
+
+            // width: 100%;
+            // max-width: 42rem;
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+
+            display: flex;
+            align-items: center;
+            justify-items: center;
+        }
+    }
+
+    &__img {
+        max-height: 20rem;
+        width: min(100%, 36rem);
+
+        @include rwd(t-sml-l) {
+            height: 100%;
+            width: 100%;
+        }
+
+        @include rwd(t-sml-l) {
+            &--tenth {
+                padding: 2rem;
+            }
+        }
+    }
+}
+
+// ? Do stworzenia tego slidera z boxami trzeba nadać, na rodzica boxów display: flex;
+
+/*  Kolejno trzeba pozbyć się przepełnienia przy pomocy overflow, w tym przypadku tylko na osi x,
+dlatego overflow-x: auto, zeby automatycznie określił co zrobic z contentem którzy przepelnia.*/
+
+// ? Na dziecko, czyli container na zdjęcie czy inne elementy, trzeba określić, zeby sie nie "zawijał", czyli flex-shrink: 0;

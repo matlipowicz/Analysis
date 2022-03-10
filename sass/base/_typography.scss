@@ -1,0 +1,74 @@
+@use "../abstracts/variables" as *;
+// HEADINGS STYLES
+body {
+    font-family: var(--font-default);
+    font-size: 1.2rem;
+    font-weight: var(--fw-n);
+    letter-spacing: 0.1rem;
+    text-align: center;
+    // line-height: 2rem;
+}
+
+.heading-1 {
+    font-size: clamp(3rem, 5vw, 5rem);
+    margin-bottom: 2rem;
+}
+
+.heading-2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+
+    &--white {
+        color: var(--color-white);
+    }
+}
+
+.heading-3 {
+    font-size: clamp(2rem, 5vw, 3rem);
+
+    &--white {
+        color: var(--color-white);
+    }
+}
+
+.heading-4 {
+    font-size: clamp(1.5rem, 5vw, 1.875rem);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+// PARAGRAPHS STYLES
+
+.paragraph-m {
+    font-size: clamp(1.4rem, 1.5vw, 1.8rem);
+    font-weight: var(--fw-s);
+    line-height: 3rem;
+    color: var(--color-dark-gray);
+    margin-bottom: 4rem;
+}
+
+.paragraph-s {
+    font-size: clamp(1.2rem, 1.5vw, 1.6rem);
+    font-weight: var(--fw-s);
+    line-height: 2rem;
+    color: var(--color-dark-gray);
+}
+
+a {
+    font-size: clamp(1.4rem, 2vw, 1.6rem);
+    text-decoration: none;
+}
+
+/* // ! CLAMP - clamp(minimum, preferred, maximum);
+
+    Dobrze uzywać do "Fluid Typography" 
+
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+    
+    - minimalna wartość font-size 1.4rem
+    - preferowana 5vw
+    - maksymalna 1.8rem
+
+    ? Przeglądarka automatycznie dobiera sobie "wypośrodkowywuje" font-size w określonym zakresie
+
+*/

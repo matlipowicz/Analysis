@@ -1,0 +1,114 @@
+@use "../abstracts" as *;
+// SIGN-IN BUTTON
+
+.link-sign {
+    &,
+    &:link,
+    &:visited {
+        padding: 1rem 1rem;
+        margin-right: 1rem;
+
+        color: var(--color-medium-blue);
+        font-weight: var(--fw-s);
+
+        @include rwd(t-sml-l) {
+            margin-right: none;
+        }
+    }
+}
+
+// OUTLINE BUTTON
+
+.button-outline {
+    &,
+    &:link,
+    &:visited {
+        display: inline-block;
+        border: 1px solid var(--color-medium-blue);
+        border-radius: 50rem;
+
+        padding: 1rem 3rem;
+
+        color: var(--color-dark-gray);
+        font-weight: var(--fw-s);
+
+        transition: all 0.4s;
+    }
+
+    &:hover {
+        background-color: var(--color-medium-blue);
+        color: var(--color-dark-blue);
+        font-weight: var(--fw-m);
+    }
+
+    &:active {
+        color: var(--color-pink);
+    }
+
+    &--nav:link,
+    &--nav:visited {
+        padding: 1.5rem 5rem;
+        margin-left: 3rem;
+        // height: 100%;
+        // width: 100%;
+
+        @include rwd(t-sml-l) {
+            padding: 1rem 5rem;
+            margin-left: 0;
+        }
+    }
+
+    &--footer:link,
+    &--footer:visited {
+        align-self: center;
+        padding: 1.5rem 5rem;
+    }
+}
+
+// BUTTON PINK
+
+.button-pink {
+    &,
+    &:link,
+    &:visited {
+        display: inline-block;
+        font-weight: var(--fw-m);
+        color: var(--color-light-gray);
+
+        padding: 1.5rem 5rem;
+        width: max(50%, 24rem);
+        background-color: var(--color-pink);
+        border-radius: 50rem;
+
+        text-align: center;
+        z-index: 1000;
+    }
+
+    &--footer:link,
+    &--footer:visited {
+        align-self: center;
+        padding: 1.5rem 5rem;
+    }
+}
+
+// LINK SIGN IN
+
+.link-sign:link,
+.link-sign:visited {
+    // width: min(40%, 18rem);
+
+    // text-align: center;
+    display: inline-block;
+    font-size: 1.4rem;
+    color: var(--color-dark-gray);
+
+    transition: all 0.4s;
+
+    &:hover {
+        color: var(--color-pink);
+    }
+
+    &:active {
+        border-bottom: 1px solid var(--color-pink);
+    }
+}

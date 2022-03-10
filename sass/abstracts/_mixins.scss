@@ -1,0 +1,68 @@
+//! MEDIA QUERY MANAGER --> in progress
+
+/*
+
+*Minimum of viewport width
+
+m - stands for mobile
+t - stands for tablet
+d - stands form desktop
+sml - small
+med - medium
+bg - big
+bgs - biggest
+p - portrait
+l - landscape
+
+21.875em --> 350px = m-sml-p
+
+*Between vieport width
+
+31.25em --> 500px = m-med-p
+
+43.75em --> 700px = t-sml-p
+
+54.875em --> 878px = t-med-p
+
+64em --> 1024px = t-sml-l
+
+
+*Maximum of viewport width
+100em --> 1600px = d-bg-l
+*/
+
+@mixin rwd($breakpoint) {
+    @if $breakpoint == m-sml-p {
+        @media only screen and (min-width: 21.875em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == m-med-p {
+        @media only screen and (min-width: 31.25em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == t-sml-p {
+        @media only screen and (min-width: 43.75em) {
+            @content;
+        }
+    }
+    @if $breakpoint == t-med-p {
+        @media only screen and (min-width: 54.875em) {
+            @content;
+        }
+    }
+    @if $breakpoint == t-sml-l {
+        @media only screen and (min-width: 64em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == d-med-l {
+        @media only screen and (min-width: 100em) {
+            @content;
+        }
+    }
+}
