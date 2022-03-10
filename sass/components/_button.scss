@@ -6,7 +6,6 @@
     &:link,
     &:visited {
         padding: 1rem 1rem;
-        margin-right: 1rem;
 
         color: var(--color-medium-blue);
         font-weight: var(--fw-s);
@@ -33,6 +32,12 @@
         font-weight: var(--fw-s);
 
         transition: all 0.4s;
+
+        @include rwd(t-sml-l) {
+            padding: 1rem 3rem;
+            width: 100%;
+            max-width: 20rem;
+        }
     }
 
     &:hover {
@@ -53,15 +58,25 @@
         // width: 100%;
 
         @include rwd(t-sml-l) {
-            padding: 1rem 5rem;
+            padding: 1rem 3rem;
             margin-left: 0;
+            width: 100%;
+            max-width: 15rem;
         }
     }
 
     &--footer:link,
     &--footer:visited {
         align-self: center;
+
         padding: 1.5rem 5rem;
+        width: 100%;
+        max-width: 24rem;
+    }
+
+    &--mobile:link,
+    &--mobile:visited {
+        margin-right: 5rem;
     }
 }
 
@@ -76,7 +91,7 @@
         color: var(--color-light-gray);
 
         padding: 1.5rem 5rem;
-        width: max(50%, 24rem);
+        width: max(40%, 24rem);
         background-color: var(--color-pink);
         border-radius: 50rem;
 
@@ -87,7 +102,10 @@
     &--footer:link,
     &--footer:visited {
         align-self: center;
+
         padding: 1.5rem 5rem;
+        width: 100%;
+        max-width: 24rem;
     }
 }
 
@@ -110,5 +128,9 @@
 
     &:active {
         border-bottom: 1px solid var(--color-pink);
+    }
+
+    &--mobile:link,
+    &--mobile:visited {
     }
 }

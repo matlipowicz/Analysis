@@ -13,6 +13,10 @@
 
 .features {
     padding: 4rem 2rem;
+
+    @include rwd(t-sml-l) {
+        margin: 6rem 0 10 0;
+    }
 }
 
 .plan {
@@ -29,6 +33,7 @@
 
     @include rwd(t-sml-l) {
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        margin-bottom: 10rem;
     }
 
     &__first,
@@ -76,6 +81,9 @@
     }
 
     &__description {
+        @include rwd(t-sml-l) {
+            text-align: left;
+        }
         @include rwd(t-sml-l) {
             &--2 {
                 grid-column: 2 / -1;

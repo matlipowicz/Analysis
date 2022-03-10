@@ -43,6 +43,7 @@ l - landscape
 
 64em --> 1024px = t-sml-l
 
+75em --> 1200px = d-sml-l
 
 *Maximum of viewport width
 100em --> 1600px = d-bg-l
@@ -78,10 +79,15 @@ body {
 
 .heading-2 {
   font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 1.5rem;
+  margin-bottom: 4rem;
 }
 .heading-2--white {
   color: var(--color-white);
+}
+@media only screen and (min-width: 64em) {
+  .heading-2 {
+    margin-bottom: 6rem;
+  }
 }
 
 .heading-3 {
@@ -131,7 +137,6 @@ a {
 
 */
 .nav__logo {
-  transform: translateX(-4rem);
   max-width: 40%;
   height: 80%;
   margin-left: 1rem;
@@ -148,20 +153,41 @@ a {
 }
 @media only screen and (min-width: 64em) {
   .nav__logo {
-    width: 30rem;
+    width: 22%;
     height: 100%;
     margin-left: 0.5rem;
     align-self: flex-end;
   }
 }
 .nav__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 12rem 2rem 2rem 2rem;
-  margin: 0 auto;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
 }
 @media only screen and (min-width: 64em) {
   .nav__buttons {
     padding: 0;
     margin: 0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.nav__buttons--mobile {
+  margin-top: 2rem;
+}
+@media only screen and (min-width: 64em) {
+  .nav__buttons--mobile {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 .nav__link:link, .nav__link:visited {
@@ -338,6 +364,7 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   justify-content: center;
   height: 100%;
+  margin-top: 10rem;
   grid-gap: 6rem;
 }
 @media only screen and (min-width: 31.25em) {
@@ -413,6 +440,11 @@ a {
 .features {
   padding: 4rem 2rem;
 }
+@media only screen and (min-width: 64em) {
+  .features {
+    margin: 6rem 0 10 0;
+  }
+}
 
 .plan {
   display: grid;
@@ -428,6 +460,7 @@ a {
 @media only screen and (min-width: 64em) {
   .plan {
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    margin-bottom: 10rem;
   }
 }
 .plan__first, .plan__second, .plan__third {
@@ -469,6 +502,11 @@ a {
   }
 }
 @media only screen and (min-width: 64em) {
+  .functionality__description {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 64em) {
   .functionality__description--2 {
     grid-column: 2/-1;
     grid-row: 2/3;
@@ -504,7 +542,7 @@ a {
 }
 @media only screen and (min-width: 64em) {
   .nav {
-    justify-content: space-between;
+    gap: 2rem;
   }
 }
 .nav__list {
@@ -516,7 +554,6 @@ a {
   top: 0;
   right: 0;
   background-color: rgba(23, 39, 85, 0.95);
-  padding-top: 30%;
   height: 100%;
   width: 0;
   transform: translateX(100%);
@@ -534,7 +571,7 @@ a {
     height: 5rem;
     width: 100%;
     padding: 0;
-    margin-left: 1rem;
+    margin-left: 3rem;
     transform: translateX(-5rem);
     opacity: 1;
     visibility: visible;
@@ -563,7 +600,13 @@ a {
 @media only screen and (min-width: 64em) and (min-width: 64em) {
   .nav__item:not(:last-child) {
     margin: 0;
-    margin-left: 3rem;
+    margin-left: 1rem;
+    flex-grow: 2;
+  }
+}
+@media only screen and (min-width: 64em) and (min-width: 75em) {
+  .nav__item:not(:last-child) {
+    margin-left: 2rem;
   }
 }
 .nav__item::before {
@@ -691,8 +734,8 @@ a {
 .hamburger-menu__toggle:checked + .hamburger-menu__button .burger-menu {
   background-color: transparent;
   position: fixed;
-  top: 3.5rem;
-  right: 3.5rem;
+  top: 4.5rem;
+  right: 4.5rem;
 }
 
 .hamburger-menu__toggle:checked + .hamburger-menu__button .burger-menu::before {
@@ -707,7 +750,6 @@ a {
 
 .link-sign, .link-sign:link, .link-sign:visited {
   padding: 1rem 1rem;
-  margin-right: 1rem;
   color: var(--color-medium-blue);
   font-weight: var(--fw-s);
 }
@@ -726,6 +768,13 @@ a {
   font-weight: var(--fw-s);
   transition: all 0.4s;
 }
+@media only screen and (min-width: 64em) {
+  .button-outline, .button-outline:link, .button-outline:visited {
+    padding: 1rem 3rem;
+    width: 100%;
+    max-width: 20rem;
+  }
+}
 .button-outline:hover {
   background-color: var(--color-medium-blue);
   color: var(--color-dark-blue);
@@ -740,13 +789,20 @@ a {
 }
 @media only screen and (min-width: 64em) {
   .button-outline--nav:link, .button-outline--nav:visited {
-    padding: 1rem 5rem;
+    padding: 1rem 3rem;
     margin-left: 0;
+    width: 100%;
+    max-width: 15rem;
   }
 }
 .button-outline--footer:link, .button-outline--footer:visited {
   align-self: center;
   padding: 1.5rem 5rem;
+  width: 100%;
+  max-width: 24rem;
+}
+.button-outline--mobile:link, .button-outline--mobile:visited {
+  margin-right: 5rem;
 }
 
 .button-pink, .button-pink:link, .button-pink:visited {
@@ -754,7 +810,7 @@ a {
   font-weight: var(--fw-m);
   color: var(--color-light-gray);
   padding: 1.5rem 5rem;
-  width: max(50%, 24rem);
+  width: max(40%, 24rem);
   background-color: var(--color-pink);
   border-radius: 50rem;
   text-align: center;
@@ -763,6 +819,8 @@ a {
 .button-pink--footer:link, .button-pink--footer:visited {
   align-self: center;
   padding: 1.5rem 5rem;
+  width: 100%;
+  max-width: 24rem;
 }
 
 .link-sign:link,
@@ -780,7 +838,6 @@ a {
 .link-sign:visited:active {
   border-bottom: 1px solid var(--color-pink);
 }
-
 .chart-grid {
   display: flex;
   overflow-x: auto;
@@ -811,8 +868,12 @@ a {
   background-color: var(--color-white);
   border-radius: 2rem;
 }
+.chart-grid__box--10 {
+  display: none;
+}
 @media only screen and (min-width: 64em) {
   .chart-grid__box--10 {
+    display: block;
     justify-content: center;
     position: absolute;
     top: 50%;
@@ -820,6 +881,8 @@ a {
     transform: translate(-50%, -50%);
     width: min(20%, 300rem);
     height: 25%;
+    opacity: 1;
+    visibility: visible;
     border-radius: 2rem;
     background-color: var(--color-white);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);

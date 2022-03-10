@@ -39,8 +39,11 @@
         background-color: var(--color-white);
         border-radius: 2rem;
 
-        @include rwd(t-sml-l) {
-            &--10 {
+        &--10 {
+            display: none;
+
+            @include rwd(t-sml-l) {
+                display: block;
                 justify-content: center;
 
                 position: absolute;
@@ -50,6 +53,8 @@
 
                 width: min(20%, 300rem);
                 height: 25%;
+                opacity: 1;
+                visibility: visible;
 
                 border-radius: 2rem;
 

@@ -26,6 +26,7 @@ l - landscape
 
 64em --> 1024px = t-sml-l
 
+75em --> 1200px = d-sml-l
 
 *Maximum of viewport width
 100em --> 1600px = d-bg-l
@@ -56,6 +57,12 @@ l - landscape
     }
     @if $breakpoint == t-sml-l {
         @media only screen and (min-width: 64em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == d-sml-l {
+        @media only screen and (min-width: 75em) {
             @content;
         }
     }

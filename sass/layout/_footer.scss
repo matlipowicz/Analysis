@@ -132,11 +132,15 @@
         justify-content: center;
 
         height: 100%;
+        margin-top: 10rem;
 
         grid-gap: 6rem;
 
         @include rwd(m-med-p) {
             grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+        }
+
+        @include rwd(t-sml-l) {
         }
 
         &--dark {
