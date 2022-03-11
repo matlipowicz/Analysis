@@ -1,4 +1,5 @@
 @use "../abstracts" as *;
+
 // SIGN-IN BUTTON
 
 .link-sign {
@@ -54,8 +55,6 @@
     &--nav:visited {
         padding: 1.5rem 5rem;
         margin-left: 3rem;
-        // height: 100%;
-        // width: 100%;
 
         @include rwd(t-sml-l) {
             padding: 1rem 3rem;
@@ -87,16 +86,18 @@
     &:link,
     &:visited {
         display: inline-block;
-        font-weight: var(--fw-m);
-        color: var(--color-light-gray);
 
-        padding: 1.5rem 5rem;
-        width: max(40%, 24rem);
         background-color: var(--color-pink);
         border-radius: 50rem;
 
-        text-align: center;
+        padding: 1.5rem 5rem;
+        width: max(40%, 24rem);
+
         z-index: 1000;
+
+        text-align: center;
+        font-weight: var(--fw-m);
+        color: var(--color-light-gray);
     }
 
     &--footer:link,
@@ -113,10 +114,8 @@
 
 .link-sign:link,
 .link-sign:visited {
-    // width: min(40%, 18rem);
-
-    // text-align: center;
     display: inline-block;
+
     font-size: 1.4rem;
     color: var(--color-dark-gray);
 
@@ -128,9 +127,5 @@
 
     &:active {
         border-bottom: 1px solid var(--color-pink);
-    }
-
-    &--mobile:link,
-    &--mobile:visited {
     }
 }

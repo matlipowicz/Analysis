@@ -1,5 +1,7 @@
 @use "../abstracts" as *;
 
+// MAIN SECTION OF THE SITE
+
 .container {
     @include rwd(t-sml-l) {
         grid-column: 1 / 13;
@@ -10,6 +12,8 @@
         padding-right: clamp(2rem, 10vw, 22rem);
     }
 }
+
+// SECTION FEATURES
 
 .features {
     padding: 4rem 2rem;
@@ -67,15 +71,19 @@
     }
 }
 
+// SECTION FUNCTIONALITY
+
 .functionality {
     padding: 4rem 2rem;
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 2rem;
+    gap: 6rem;
     justify-items: center;
+    align-items: center;
 
     @include rwd(t-sml-l) {
         grid-template-columns: repeat(2, 1fr);
+        row-gap: 16rem;
 
         column-gap: 10%;
     }
@@ -100,6 +108,11 @@
         margin-bottom: 6rem;
         width: 100%;
         max-width: 60rem;
+        height: 100%;
+        max-height: 30rem;
+
+        display: flex;
+        align-items: center;
 
         @include rwd(t-sml-l) {
             &--2 {

@@ -1,5 +1,7 @@
 @use "../abstracts" as *;
 
+// FOOTER STYLING
+
 .footer {
     position: relative;
     width: 100%;
@@ -33,18 +35,12 @@
         grid-row: 3 / 4;
 
         padding-left: clamp(2rem, 10vw, 22rem);
-
         padding-right: clamp(2rem, 10vw, 22rem);
     }
 
-    &__nav {
-        // display: grid;
-        // // grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-        // grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-        // grid-template-rows: repeat(3, 10rem);
-        // align-items: center;
-        // justify-items: center;
+    // FOOTER NAVIGATION
 
+    &__nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -97,6 +93,8 @@
     }
 }
 
+// ICONS - SOCIAL
+
 .social {
     display: flex;
     gap: 3rem;
@@ -130,17 +128,13 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         justify-content: center;
+        gap: 6rem;
 
         height: 100%;
         margin-top: 10rem;
 
-        grid-gap: 6rem;
-
         @include rwd(m-med-p) {
             grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-        }
-
-        @include rwd(t-sml-l) {
         }
 
         &--dark {
@@ -162,7 +156,6 @@
 
         padding: 4rem 4rem;
         max-height: 44rem;
-        // max-width: 34rem;
     }
 
     &__type {
@@ -180,10 +173,10 @@
             color: var(--color-dark-blue);
         }
         &--amount {
+            margin-bottom: 1.5rem;
+
             font-size: 5rem;
             font-weight: var(--fw-b);
-
-            margin-bottom: 1.5rem;
         }
 
         &--fee {

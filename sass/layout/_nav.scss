@@ -1,9 +1,8 @@
 @use "../abstracts" as *;
 
+// STYLE OF NAV ELEMENTS
 .nav {
     &__logo {
-        // transform: translateX(4rem);
-
         max-width: 40%;
         height: 80%;
         margin-left: 1rem;
@@ -18,12 +17,14 @@
 
         @include rwd(t-sml-l) {
             // max-width: 15%;
-            width: 22%;
+            width: 55%;
             height: 100%;
             margin-left: 0.5rem;
             align-self: flex-end;
         }
     }
+
+    // * BUTTON BOX
 
     &__buttons {
         display: flex;
@@ -38,9 +39,6 @@
         visibility: hidden;
 
         @include rwd(t-sml-l) {
-            padding: 0;
-            margin: 0;
-            // flex-basis: 20%;
             flex-grow: 1;
 
             display: flex;
@@ -48,12 +46,19 @@
             align-items: center;
             gap: 2rem;
 
+            padding: 0;
+            margin: 0;
+
             opacity: 1;
             visibility: visible;
         }
 
+        // * Mobile version of buttons
+
         &--mobile {
             margin-top: 2rem;
+            margin-bottom: 6rem;
+
             @include rwd(t-sml-l) {
                 opacity: 0;
                 visibility: hidden;

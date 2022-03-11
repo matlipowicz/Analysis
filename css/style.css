@@ -153,7 +153,7 @@ a {
 }
 @media only screen and (min-width: 64em) {
   .nav__logo {
-    width: 22%;
+    width: 55%;
     height: 100%;
     margin-left: 0.5rem;
     align-self: flex-end;
@@ -170,19 +170,20 @@ a {
 }
 @media only screen and (min-width: 64em) {
   .nav__buttons {
-    padding: 0;
-    margin: 0;
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 2rem;
+    padding: 0;
+    margin: 0;
     opacity: 1;
     visibility: visible;
   }
 }
 .nav__buttons--mobile {
   margin-top: 2rem;
+  margin-bottom: 6rem;
 }
 @media only screen and (min-width: 64em) {
   .nav__buttons--mobile {
@@ -198,15 +199,15 @@ a {
 .header {
   position: relative;
   overflow: hidden;
-  background-color: var(--color-dark-blue);
-  border-bottom: 2rem solid var(--color-pink);
-  color: var(--color-light-gray);
   width: 100%;
   padding: 0 1rem;
+  background-color: var(--color-dark-blue);
+  border-bottom: 2rem solid var(--color-pink);
   background-image: url(../../SVG/Substract-2.svg);
   background-repeat: no-repeat;
   background-size: 80% 80%;
   background-position: bottom right;
+  color: var(--color-light-gray);
 }
 @media only screen and (min-width: 43.75em) {
   .header {
@@ -363,9 +364,9 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   justify-content: center;
+  gap: 6rem;
   height: 100%;
   margin-top: 10rem;
-  grid-gap: 6rem;
 }
 @media only screen and (min-width: 31.25em) {
   .pricing__cards {
@@ -401,9 +402,9 @@ a {
   color: var(--color-dark-blue);
 }
 .pricing__price--amount {
+  margin-bottom: 1.5rem;
   font-size: 5rem;
   font-weight: var(--fw-b);
-  margin-bottom: 1.5rem;
 }
 .pricing__price--fee {
   font-size: 1.6rem;
@@ -492,12 +493,14 @@ a {
   padding: 4rem 2rem;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 2rem;
+  gap: 6rem;
   justify-items: center;
+  align-items: center;
 }
 @media only screen and (min-width: 64em) {
   .functionality {
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 16rem;
     column-gap: 10%;
   }
 }
@@ -519,6 +522,10 @@ a {
   margin-bottom: 6rem;
   width: 100%;
   max-width: 60rem;
+  height: 100%;
+  max-height: 30rem;
+  display: flex;
+  align-items: center;
 }
 @media only screen and (min-width: 64em) {
   .functionality__chart--2 {
@@ -553,14 +560,14 @@ a {
   position: fixed;
   top: 0;
   right: 0;
-  background-color: rgba(23, 39, 85, 0.95);
   height: 100%;
   width: 0;
+  overflow: hidden;
   transform: translateX(100%);
   opacity: 0;
   visibility: hidden;
-  overflow: hidden;
   transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  background-color: rgba(23, 39, 85, 0.95);
 }
 @media only screen and (min-width: 64em) {
   .nav__list {
@@ -575,18 +582,20 @@ a {
     transform: translateX(-5rem);
     opacity: 1;
     visibility: visible;
-    background-color: transparent;
     transition: none;
+    background-color: transparent;
   }
 }
 .nav__item {
+  display: flex;
+  align-items: flex-end;
   position: relative;
-  margin-right: 3rem;
+  margin-right: 2rem;
   list-style: none;
   cursor: pointer;
 }
 .nav__item:not(:last-child) {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 @media only screen and (min-width: 64em) {
   .nav__item {
@@ -642,22 +651,17 @@ a {
   color: var(--color-pink);
   font-size: 2.5rem;
   z-index: 20;
-  transition: all 0.8s;
+  transition: all 0.6s;
 }
 @media only screen and (min-width: 64em) {
   .nav__link:link, .nav__link:visited {
-    display: inline-block;
-    position: relative;
     padding: 1rem 1.5rem;
-    color: var(--color-pink);
     font-size: 1.6rem;
-    z-index: 20;
-    transition: all 0.8s;
   }
 }
 .nav__item:hover > .nav__link {
   color: var(--color-dark-blue);
-  transform: translate(-2rem, -1rem);
+  transform: translate(-1.5rem, -1rem);
 }
 @media only screen and (min-width: 64em) {
   .nav__item:hover > .nav__link {
@@ -667,18 +671,18 @@ a {
 
 @media only screen and (min-width: 64em) {
   .hamburger-menu__toggle, .hamburger-menu__button {
+    position: static;
     opacity: 0;
     visibility: hidden;
     z-index: 0;
-    position: static;
   }
 }
 .hamburger-menu__toggle {
   position: absolute;
   top: 3rem;
   right: 3rem;
-  z-index: 50;
   opacity: 0;
+  z-index: 50;
 }
 .hamburger-menu__button {
   display: inline-block;
@@ -711,10 +715,10 @@ a {
 .burger-menu::before, .burger-menu::after {
   content: "";
   display: block;
+  position: absolute;
   height: 0.3rem;
   width: 4rem;
   background-color: var(--color-pink);
-  position: absolute;
   transform-origin: center;
   transition: all 0.4s;
 }
@@ -734,8 +738,8 @@ a {
 .hamburger-menu__toggle:checked + .hamburger-menu__button .burger-menu {
   background-color: transparent;
   position: fixed;
-  top: 4.5rem;
-  right: 4.5rem;
+  top: 5%;
+  right: 10%;
 }
 
 .hamburger-menu__toggle:checked + .hamburger-menu__button .burger-menu::before {
@@ -807,14 +811,14 @@ a {
 
 .button-pink, .button-pink:link, .button-pink:visited {
   display: inline-block;
-  font-weight: var(--fw-m);
-  color: var(--color-light-gray);
-  padding: 1.5rem 5rem;
-  width: max(40%, 24rem);
   background-color: var(--color-pink);
   border-radius: 50rem;
-  text-align: center;
+  padding: 1.5rem 5rem;
+  width: max(40%, 24rem);
   z-index: 1000;
+  text-align: center;
+  font-weight: var(--fw-m);
+  color: var(--color-light-gray);
 }
 .button-pink--footer:link, .button-pink--footer:visited {
   align-self: center;
@@ -838,6 +842,7 @@ a {
 .link-sign:visited:active {
   border-bottom: 1px solid var(--color-pink);
 }
+
 .chart-grid {
   display: flex;
   overflow-x: auto;
@@ -847,11 +852,11 @@ a {
   .chart-grid {
     display: grid;
     grid-template: repeat(3, 1fr)/repeat(3, 1fr);
-    overflow: hidden;
     position: absolute;
     top: 50%;
     left: 80%;
     transform: translateX(-50%) translateY(-50%);
+    overflow: hidden;
     padding: 2rem;
     margin-left: 8rem;
     width: min(50%, 100rem);
@@ -865,6 +870,8 @@ a {
   padding: 2rem;
   margin-top: 6rem;
   margin-bottom: 6rem;
+  width: 100%;
+  max-width: 40rem;
   background-color: var(--color-white);
   border-radius: 2rem;
 }

@@ -5,23 +5,21 @@
 
     overflow: hidden;
 
-    background-color: var(--color-dark-blue);
-    border-bottom: 2rem solid var(--color-pink);
-    color: var(--color-light-gray);
-
     width: 100%;
     padding: 0 1rem;
 
+    background-color: var(--color-dark-blue);
+    border-bottom: 2rem solid var(--color-pink);
+
     background-image: url(../../SVG/Substract-2.svg);
-    // background-position: left top;
     background-repeat: no-repeat;
-    // background-size: bottom left;
     background-size: 80% 80%;
     background-position: bottom right;
 
+    color: var(--color-light-gray);
+
     @include rwd(t-sml-p) {
         padding-left: clamp(2rem, 5vw, 22rem);
-
         padding-right: clamp(2rem, 5vw, 22rem);
     }
 
@@ -33,7 +31,6 @@
     &__description {
         padding: 10rem 2rem 6rem 2rem;
         width: 100%;
-        // max-width: 55rem;
 
         @include rwd(m-med-p) {
             padding: 10rem 4rem 6rem 4rem;
@@ -54,29 +51,12 @@
         }
     }
 
-    &__background-1,
-    &__background-2 {
-        // position: absolute;
-        // position: relative;
-        // z-index: 0;
-    }
-
     &__background-1 {
         position: absolute;
         top: -15rem;
         left: -5rem;
-        // width: 40rem;
-        // height: 40rem;
+
         width: 60%;
         height: 60%;
     }
-
-    // &__background-2 {
-    //     bottom: 0;
-    //     right: -2rem;
-    //     width: 50rem;
-    //     height: 50rem;
-    // }
 }
-
-// PINK BORDER FOR CLIP-PATH
